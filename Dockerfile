@@ -40,7 +40,7 @@ ARG TARGET
 
 RUN git clone https://github.com/mxe/mxe.git 
 RUN  cd /build/mxe\
-     && make MXE_TARGETS="${TARGET}" -j$(nproc) qt5\
+     && make MXE_TARGETS='x86_64-w64-mingw32.static' -j$(nproc) qt5\
      && make clean-junk
 
 ENV PATH="/build/mxe/usr/bin:${PATH}"
