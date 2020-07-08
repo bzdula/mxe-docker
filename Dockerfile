@@ -36,8 +36,6 @@ RUN apt install -y \
 
 WORKDIR /build
 
-ARG TARGET
-
 RUN git clone https://github.com/mxe/mxe.git 
 RUN  cd /build/mxe\
      && make MXE_TARGETS='x86_64-w64-mingw32.static' -j$(nproc) qt5\
